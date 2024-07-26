@@ -1,0 +1,43 @@
+
+.box {
+    background-color: crimson;
+    padding-left: 1rem;
+    border: 2px dashed black;
+    font-size: 20px;
+    color: azure;
+}
+
+/* Grid Code */
+.container{
+    display: grid;
+   /* Give size and number of columns and rows */
+    grid-template-columns: 100px 100px  100px 100px 100px 100px;
+    /*or alternatively: */
+    grid-template-rows: repeat(6, 1fr);
+    /* fr stands for fractional unit and divides the rows/columns into equal rows/columns thoriugh the available space */
+   
+    /* To set minimum size and maximum size:
+    grid-template-rows: minmax(200px,auto) 
+    auto aalows size to adjust for content length*/
+    gap: 10px;
+}
+
+/* Position each box in the gird */
+.box1{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+.box2 {
+    /*Alternatively, can be written as below:
+    */
+    grid-column: 5/7;
+    grid-row: 1/7;
+}
+
+.box3{
+    /* allows overlapping of content */
+    grid-column:4/6 ;
+    grid-row: 2/4;
+}
